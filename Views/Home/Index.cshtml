@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Engineering Resume Builder - Create Professional Resumes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .blurry-img {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Build Your Engineering Resume</h1>
+            <p class="lead text-muted">Craft a professional engineering resume effortlessly.</p>
+            <p>
+
+
+                <a class="btn btn-primary my-2" asp-controller="Account" asp-action="register">Get Started</a>
+                <a  class="btn btn-secondary my-2" asp-controller="Account" asp-action="login">Log In</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Why Choose Us?</h2>
+                <p class="text-muted">
+                    Our platform is tailored for engineering students like you. We understand the unique skills and experiences
+                    that employers in the engineering field look for in a resume. With our intuitive interface, you can create
+                    a standout resume in no time.
+                </p>
+                <p class="text-muted">
+                    Whether you're a fresh graduate or have years of experience, our resume builder will help you highlight your
+                    accomplishments and skills effectively.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://www.jobhero.com/resources/wp-content/uploads/2023/07/tutor-template-resume-JH.svg" class="img-fluid less-blurry-img" width="200" height="300">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Why Use Our Resume Builder?</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card bg-primary text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Targeted Resumes</h5>
+                        <p class="card-text">Create role-specific resumes tailored to IT job applications.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Professional Look</h5>
+                        <p class="card-text">Design resumes that make a lasting impression on employers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-success text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Highlight Achievements</h5>
+                        <p class="card-text">Showcase your accomplishments and projects effectively.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-info text-white text-center p-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Ease of Use</h5>
+                        <p class="card-text">Intuitive interface for quick and hassle-free resume creation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Facebook</a></li>
+                        <li><a href="#" class="text-white">Twitter</a></li>
+                        <li><a href="#" class="text-white">Instagram</a></li>
+                        <li><a href="#" class="text-white">LinkedIn</a></li>
+                        <li><a href="#" class="text-white">GitHub</a></li>
+                        <!-- Add more social media links as needed -->
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <!-- Add more links as needed -->
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>pradyunyachunchwar84@gmail.com</li>
+                        <li>Phone: +91 8459576430</li>
+                        <!-- Add more contact information as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+

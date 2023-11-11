@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.less-blurry-img {
+    filter: blur(4px); 
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+table {
+    border-collapse: collapse;
+}
+
+    table td {
+        padding: 0px
+    }
+.divider {
+    border-bottom: 2px solid #333; /* Black-gray color */
+    padding-bottom: 10px; /* Adjust as needed */
+}
+
+ .contact-info p
+{
+    display: inline-block;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.profile {
+    margin-top: 10px;
+}
+.profile a{
+    margin-right:20px;
+    
+}

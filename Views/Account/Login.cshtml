@@ -1,0 +1,40 @@
+﻿@model register.Models.ViewModel.LoginViewModel
+@{
+}
+<h1 style="margin-left:100px;margin:20px;">User Login</h1>
+
+
+<div class="container py-5">
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"> </div>
+      
+
+        <div class="mb-3">
+            <label class="form-label">Email ID</label>
+            <input type="text" class="form-control" id="Email" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id="displayName" asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group" class="mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="RememberMe" /> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3" style="margin-top:20px;">
+            <button type="submit" class="btn btn-dark" asp-area="" >Login</button>
+        </div>
+
+    </form>
+</div>

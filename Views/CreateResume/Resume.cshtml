@@ -1,0 +1,369 @@
+﻿@inject SignInManager<ApplicationUser> signInManager
+@model register.Models.ViewModel.ResumeSections.ResumeDetail
+
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+}
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+@{
+    ViewData["Title"] = "Multi-Step Form";
+    
+}
+<form method="post" class="mx-auto" style="max-width: 500px;margin-top:30px;  ">
+    
+    
+    <h4>Personal Detail</h4>
+    <div class="form-group mb-4">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" asp-for="Name" value="@user.Name" placeholder="Enter your name" >
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="name">Tagline</label>
+        <input type="text" class="form-control" id="name" asp-for="Tagline" placeholder="Ex: Coder | Developer" value="@user.Tagline">
+        <span asp-validation-for="Tagline" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="email">Email Id</label>
+        <input type="email" class="form-control" id="email" asp-for="UserEmail" placeholder="Enter your email" value="@user.UserEmail">
+        <span asp-validation-for="UserEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="mobile">Mobile Number</label>
+        <input type="text" class="form-control" id="mobile" asp-for="MobileNumber" placeholder="Exclude Country Code" value="@user.MobileNumber">
+        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" asp-for="City" placeholder="" value="@user.City">
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <h4>Professional Connections</h4>
+
+    <div class="form-group mb-4">
+        <label for="linkedIn">LinkedIn</label>
+        <input type="linkedIn" class="form-control" id="linkedIn" asp-for="LinkedIn" value="@user.LinkedIn"
+               placeholder="Enter LinkedIn Profile URL">
+        <span asp-validation-for="LinkedIn" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="gitHub">GitHub</label>
+        <input type="gitHub" class="form-control" id="gitHub" asp-for="Github" value="@user.Github"
+               placeholder="Enter GitHub Profile URL">
+        <span asp-validation-for="Github" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group mb-4">
+        <label for="Progamming">Competative Progamming</label>
+        <input type="Progamming" class="form-control" id="gitHub" asp-for="LeetCode" value="@user.LeetCode"
+               placeholder=" GFG or LeetCode Profile Link">
+        <span asp-validation-for="LeetCode" class="text-danger"></span>
+    </div>
+    <h4>Career Objective</h4>
+    <div class="form-group mb-4">
+        <label for="Objective">Career Objective</label>
+        <input type="text" class="form-control" id="phone" value="@user.CareerObjective" asp-for="CareerObjective" value="@user.CareerObjective"
+               placeholder="">
+        <span asp-validation-for="CareerObjective" class="text-danger"></span>
+    </div>
+
+ 
+    <h4>Graduation Detail</h4>
+    <div class="form-group mb-4">
+        <label for="Objective">College Name</label>
+        <input type="text" class="form-control" id="College" asp-for="College" value="@user.College"
+               placeholder="">
+        <span asp-validation-for="College" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="Objective">Course</label>
+        <input type="text" class="form-control" id="College" asp-for="Course" value="@user.Course"
+               placeholder="Ex: BE/B.Tech etc">
+        <span asp-validation-for="Course" class="text-danger"></span>
+    </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Passing Year</label>
+            <input type="text" class="form-control" id="Year" asp-for="PassingYear" value="@user.PassingYear"
+                   placeholder="Ex: 2024">
+        <span asp-validation-for="PassingYear" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="CGPA">CGPA</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="CGPA" value="@user.CGPA"
+                   placeholder="CGPA out of 10">
+        <span asp-validation-for="CGPA" class="text-danger"></span>
+        </div>
+
+        <h4>12th/Diplomna Detail</h4>
+        <div class="form-group mb-4">
+            <label for="Objective">College Name</label>
+            <input type="text" class="form-control" id="College" asp-for="dCollege" value="@user.dCollege"
+                   placeholder="">
+        <span asp-validation-for="dCollege" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Objective">Course</label>
+            <input type="text" class="form-control" id="College" asp-for="dCourse" value="@user.dCourse"
+                   placeholder="Ex: Diploma in IT, Science,Arts">
+        <span asp-validation-for="dCourse" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Passing Year</label>
+            <input type="text" class="form-control" id="Year" asp-for="dPassingYear" value="@user.dPassingYear"
+                   placeholder="">
+        <span asp-validation-for="dPassingYear" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="CGPA">Percentage</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="dPercetange" value="@user.dPercetange"
+                   placeholder="">
+        <span asp-validation-for="dPercetange" class="text-danger"></span>
+        </div>
+
+        <h4>School</h4>
+        <div class="form-group mb-4">
+            <label for="Objective">School Name</label>
+            <input type="text" class="form-control" id="College" asp-for="school" value="@user.school"
+                   placeholder="">
+        <span asp-validation-for="school" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Passing Year</label>
+            <input type="text" class="form-control" id="Year" asp-for="SchoolPassingYear" value="@user.SchoolPassingYear"
+                   placeholder="">
+        <span asp-validation-for="SchoolPassingYear" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="CGPA">Percentage</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="SchoolPercentage" value="@user.SchoolPercentage"
+                   placeholder="">
+        <span asp-validation-for="SchoolPercentage" class="text-danger"></span>
+        </div>
+
+
+        <h4 style="margin-bottom:10px;" >Projects Detail</h4>
+        <span class="text-danger" style="margin-bottom:10px;">Note: Recommended to Add 3 Significant Project related to Job You will be Applying  </span>
+        <h4 style="margin-bottom:10px;">Project 1</h4>
+        <div class="form-group mb-4">
+        <label for="Objective">Project Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="ProjectTitle" value="@user.ProjectTitle"
+               placeholder="">
+        <span asp-validation-for="ProjectTitle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="Year">Description</label>
+            <input type="text" class="form-control" id="Year" asp-for="ProjectDescription" value="@user.ProjectDescription"
+               placeholder="">
+        <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+    </div>
+
+        <div class="form-group mb-4 ">
+        <label for="CGPA">TechStack</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="TechStack" value="@user.TechStack"
+               placeholder="">
+        <span asp-validation-for="TechStack" class="text-danger"></span>
+    </div>
+
+        <div class="form-group mb-4">
+        <label for="CGPA">Project Link</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="ProjectLink" value="@user.ProjectLink"
+               placeholder="Github Link /Demo vdo">
+        <span asp-validation-for="ProjectLink" class="text-danger"></span>
+    </div>
+
+
+        <hr style="color:green; " />
+        <h4 style="margin-bottom:10px;">Project 2</h4>
+        <div class="form-group mb-4">
+            <label for="Objective">Project Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="Project2Title" value="@user.Project2Title"
+                   placeholder="">
+        <span asp-validation-for="Project2Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Description</label>
+            <input type="text" class="form-control" id="Year" asp-for="Project2Description" value="@user.Project2Description"
+                   placeholder="">
+        <span asp-validation-for="Project2Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4 ">
+            <label for="CGPA">TechStack</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="Project2TechStack" value="@user.Project2TechStack"
+                   placeholder="">
+        <span asp-validation-for="Project2TechStack" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="CGPA">Project Link</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="Project2Link" value="@user.Project2Link"
+                   placeholder="Github Link /Demo vdo">
+        <span asp-validation-for="Project2Link" class="text-danger"></span>
+        </div>
+        <hr style="color:green "/>
+
+        <h4 >Project 3</h4>
+        <div class="form-group mb-4">
+            <label for="Objective">Project Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="Project3Title" value="@user.Project3Title"
+                   placeholder="">
+        <span asp-validation-for="Project3Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Description</label>
+            <input type="text" class="form-control" id="Year" asp-for="Project3Description" value="@user.Project3Description"
+                   placeholder="">
+        <span asp-validation-for="Project3Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4 ">
+            <label for="CGPA">TechStack</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="Project3TechStack" value="@user.Project3TechStack"
+                   placeholder="">
+        <span asp-validation-for="Project3TechStack" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="CGPA">Project Link</label>
+            <input type="text" class="form-control" id="CGPA" asp-for="Project3Link" value="@user.Project3Link"
+                   placeholder="Github Link /Demo vdo">
+        <span asp-validation-for="Project3Link" class="text-danger"></span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h4 style="margin-bottom:10px;"> Achievements</h4>
+        <span class="text-danger" style="margin-bottom:10px;">Note: Recommended to Add any 2 Great Achievements  </span>
+        <h4 style="margin-bottom:10px;">Achievement 1</h4>
+
+        <div class="form-group mb-4">
+        <label for="Objective">Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="AchievedName" value="@user.AchievedName"
+               placeholder="">
+        <span asp-validation-for="AchievedName" class="text-danger"></span>
+    </div>
+
+        <div class="form-group mb-4">
+        <label for="Year">Description</label>
+            <input type="text" class="form-control" id="Year" asp-for="AchievementDesc" value="@user.AchievementDesc"
+               placeholder="">
+        <span asp-validation-for="AchievementDesc" class="text-danger"></span>
+    </div>
+
+        <hr style="color:green; "  />
+        <h4 style="margin-bottom:10px;">Achievement 2</h4>
+    
+        <div class="form-group mb-4">
+            <label for="Objective">Title</label>
+            <input type="text" class="form-control" id="Title" asp-for="Achievement2Title" value="@user.Achievement2Title"
+                   placeholder="">
+        <span asp-validation-for="Achievement2Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Description</label>
+            <input type="text" class="form-control" id="Year" asp-for="Achievement2Desc" value="@user.Achievement2Desc"
+                   placeholder="">
+        <span asp-validation-for="Achievement2Desc" class="text-danger"></span>
+        </div>
+
+
+    <h4>Courses</h4>
+       
+        <span class="text-danger" style="margin-bottom:10px;">Note: Recommended to Add any 2 Certified Courses That are relavant to the Job You are  Applying </span>
+        <h4 style="margin-bottom:10px;">Course 1</h4>
+        <div class="form-group mb-4">
+        <label for="Objective">Course Name</label>
+            <input type="text" class="form-control" id="Title" asp-for="CourseTitle" value="@user.CourseTitle"
+               placeholder="">
+        <span asp-validation-for="CourseTitle" class="text-danger"></span>
+    </div>
+
+        <div class="form-group mb-4">
+        <label for="Year">Issued By</label>
+            <input type="text" class="form-control" id="Year" asp-for="IssuedBy" value="@user.IssuedBy"
+               placeholder="">
+        <span asp-validation-for="IssuedBy" class="text-danger"></span>
+    </div>
+        <hr style="color:green;"/>
+
+        <h4 style="margin-bottom:10px;">Course 2</h4>
+        <div class="form-group mb-4">
+            <label for="Objective">Course Name</label>
+            <input type="text" class="form-control" id="Title" asp-for="Course2Title" value="@user.Course2Title"
+                   placeholder="">
+        <span asp-validation-for="Course2Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-4">
+            <label for="Year">Issued By</label>
+            <input type="text" class="form-control" id="Year" asp-for="Course2IssuedBy" value="@user.Course2IssuedBy"
+                   placeholder="">
+        <span asp-validation-for="Course2IssuedBy" class="text-danger"></span>
+        </div>
+
+    <h4>Technical Skill</h4>
+        
+
+        <div class="form-group mb-4">
+        <label for="Year">FrontEnd</label>
+            <input type="text" class="form-control" id="Year" asp-for="FrontEnd" value="@user.FrontEnd"
+                   placeholder="Enter Comma Seperated Value. Ex: HTML, CSS, XML">
+            <span asp-validation-for="FrontEnd" class="text-danger"></span>
+    </div>
+        <div class="form-group mb-4">
+            <label for="Year">Language</label>
+            <input type="text" class="form-control" id="Year" asp-for="Language" value="@user.Language"
+                   placeholder="Ex: C, C++, JAva">
+            <span asp-validation-for="Language" class="text-danger"></span>
+        </div>
+       
+        <div class="form-group mb-4">
+        <label for="Year">Database</label>
+            <input type="text" class="form-control" id="Year" asp-for="Database" value="@user.Database"
+                   placeholder="Ex: MySQL, Oracle">
+    </div>
+
+        <div class="form-group mb-4">
+        <label for="Year">Famaliar With</label>
+            <input type="text" class="form-control" id="Year" asp-for="FamaliarWith" value="@user.FamaliarWith"
+                   placeholder="Ex: Image processing, IOT">
+    </div>
+
+    <button class="btn btn-success" type="submit">Submit</button>
+
+</form>
+
+
+
+
+
+

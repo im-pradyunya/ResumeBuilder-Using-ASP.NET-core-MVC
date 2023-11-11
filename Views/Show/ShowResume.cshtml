@@ -1,0 +1,227 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+}
+
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pradyunya Chunchwar's Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .contact-info i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5" style="margin:auto;">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>@user.Name</h2>
+                <p>@user.Tagline</p>
+
+                <div class="contact-info">
+                    <p><i class="fa fa-envelope"></i> @user.UserEmail</p>
+                    <p><i class="fa fa-phone"></i>+91 @user.MobileNumber</p>
+                    <p><i class="fa fa-map-marker"></i> @user.City</p>
+                </div>
+
+                <p class="profile">
+                    <a href="@user.LinkedIn" target="_blank">LinkedIn</a> |
+                    <a href="@user.Github" target="_blank">GitHub</a> |
+                    <a href="@user.LeetCode" target="_blank">LeetCode</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h3 class="divider">CAREER OBJECTIVE</h3>
+                <p>
+        @user.CareerObjective
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h3 class="divider">EDUCATION</h3>
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>College Name</th>
+                            <th>Course</th>
+                            <th>Pass out Year</th>
+                         
+                            <th>CGPA</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@user.College</td>
+                            <td>@user.Course</td>
+                            <td>@user.PassingYear</td>
+                         
+                            <td>@user.CGPA</td>
+                          
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>@user.dCollege</td>
+                            <td>@user.dCourse</td>
+                            <td>@user.dPassingYear</td>
+
+                            <td>@user.dPercetange</td>
+
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>@user.school</td>
+                            <td>Schooling</td>
+                            <td>@user.SchoolPassingYear</td>
+
+                            <td>@user.SchoolPercentage</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h2 class="divider">PROJECTS</h2>
+                <div class="project">
+                    <h3 class="d-inline">@user.ProjectTitle</h3>
+                    <p class="ml-3 d-inline"><strong><a href="@user.ProjectLink">Link</a></strong></p>
+                    <p><strong>Tech Stack:</strong> @user.TechStack</p>
+                    <p>
+                        @user.ProjectDescription
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3 class="d-inline">@user.Project2Title</h3>
+                    <p class="ml-3 d-inline"><strong><a href="@user.Project2Link">Link</a></strong></p>
+                    <p><strong>Tech Stack:</strong> @user.Project2TechStack</p>
+                    <p>
+                        @user.Project2Description
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3 class="d-inline">@user.Project3Title</h3>
+                    <p class="ml-3 d-inline"><strong><a href="@user.Project3Link">Link</a></strong></p>
+                    <p><strong>Tech Stack:</strong> @user.Project3TechStack</p>
+                    <p>
+                        @user.Project3Description
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+      
+
+      
+
+
+
+
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h2 class="divider">ACHIEVEMENT</h2>
+                <div class="achievement">
+                    <h4 class="d-inline">@user.AchievedName</h4>
+                    
+                    <p>
+                       @user.AchievementDesc
+                    </p>
+                </div>
+
+                <div class="achievement">
+                    <h4 class="d-inline">@user.Achievement2Title</h4>
+           
+                    <p>
+                        @user.Achievement2Desc
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h2 class="divider">COURSEWORK</h2>
+                <div class="coursework">
+                    <h4>@user.CourseTitle</h4>
+                    <p>@user.IssuedBy</p>
+                </div>
+
+                <div class="coursework">
+                    <h4>@user.Course2Title</h4>
+                    <p>@user.Course2IssuedBy</p>
+                </div>
+             
+            </div>
+        </div>
+
+
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h2 class="divider">TECHNICAL SKILL</h2>
+                <div class="technical-skill">
+                    <h4>Languages</h4>
+                    <p>@user.Language</p>
+                </div>
+                <div class="technical-skill">
+                    <h4>Front End</h4>
+                    <p>@user.FrontEnd</p>
+                </div>
+                <div class="technical-skill">
+                    <h4>Database</h4>
+                    <p>@user.Database</p>
+                </div>
+               
+                <div class="technical-skill">
+                    <h4>Familiar</h4>
+                    <p>@user.FamaliarWith</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <form method="get" action="@Url.Action("printResume", "Show")">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Generate PDF</button>
+            </div>
+        </form>
+
+
+    </div>
+   
+
+   
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
